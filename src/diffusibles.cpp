@@ -33,6 +33,7 @@ void Diffusibles::diffusion(CellGrids cg, double tstep) {
     double c = 0;
 
     int i, j;
+    omp_set_num_threads(2);
     for (int q = 0; q < t; q++) {
         maxDif = 0;
 #pragma omp parallel for
